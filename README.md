@@ -5,7 +5,7 @@ An wrapper of docker for pulling image from gcr.io/k8s.gcr.io
 
 ```bash
 git clone https://github.com/silenceshell/docker_wrapper.git
-sudo cp docker_wrapper/docker_wrapper.py /usr/local/bin/
+sudo cp docker_wrapper/docker_wrapper.py /usr/local/bin/docker_wrapper
 ```
 
 # usage
