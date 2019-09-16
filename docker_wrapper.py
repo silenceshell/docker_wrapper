@@ -5,9 +5,9 @@
 import os
 import sys
 
-#  gcr.io/xxx/yyy:zzz -> gcr.azk8s.cn/xxx/yyy:zzz
-#  k8s.gcr.io/xxx:yyy => gcr.io/google-containers/xxx:yyy -> gcr.azk8s.cn/google-containers/xxx:yyy
-#  quay.io/xxx/yyy:zzz -> quay.azk8s.cn/xxx/yyy:zzz
+#  gcr.io/xxx/yyy:zzz -> gcr.azk8s.cn/xxx/yyy:zzz, for example gcr.io/google_containers/kube-apiserver:v1.14.1
+#  k8s.gcr.io/xxx:yyy => gcr.io/google-containers/xxx:yyy -> gcr.azk8s.cn/google-containers/xxx:yyy, for example k8s.gcr.io/kube-apiserver:v1.14.1
+#  quay.io/xxx/yyy:zzz -> quay.azk8s.cn/xxx/yyy:zzz, for example quay.io/coreos/flannel:v0.10.0-amd64
 
 converts = [
     {
@@ -44,7 +44,6 @@ if __name__ == "__main__":
     newImage = '' 
     for cvt in converts:
         if imageArray[0] == cvt['prefix']:
-    	      # image name like k8s.gcr.io/kube-apiserver:v1.14.1 or gcr.io/google_containers/kube-apiserver:v1.14.1        	
             newImage = cvt['replace'](image)
             break
     if newImage:
