@@ -19,3 +19,8 @@ docker_wrapper pull quay.io/coreos/flannel:v0.10.0-amd64
 docker_wrapper pull nginx
 docker_wrapper pull silenceshell/godaddy:0.0.2
 ```
+
+You can pull images from a file, need a full path of a file.
+```
+docker_wrapper pull -r {image_list_full_path}
+```
