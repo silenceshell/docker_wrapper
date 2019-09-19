@@ -55,11 +55,9 @@ def pull_and_tag_image(image):
         execute_sys_cmd(cmd)
 
         print("-- pull {image} done --".format(image=image))
-        sys.exit(0)
     else:
         cmd = "docker pull {image}".format(image=image)
         execute_sys_cmd(cmd)
-        sys.exit(0)
 
 
 def pull_images_list_from_file(images_list_path):
@@ -85,4 +83,5 @@ if __name__ == "__main__":
         image = sys.argv[2]
         pull_and_tag_image(image)
 
+    print("Pull all images completed")
     sys.exit(0)
