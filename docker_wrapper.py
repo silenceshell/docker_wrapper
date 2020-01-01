@@ -48,8 +48,10 @@ if __name__ == "__main__":
         if imageArray[0] == cvt['prefix']:
             newImage = cvt['replace'](image)
             break
-        else:
-            newImage = cache_prefix + image
+
+    if not newImage:
+        newImage = cache_prefix + image
+
     if newImage:
         print("-- pull {image} from {newimage} instead --".format(image=image, newimage=newImage))
         cmd = "docker pull {image}".format(image=newImage)
